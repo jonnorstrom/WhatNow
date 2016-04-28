@@ -1,5 +1,5 @@
-# groceryapp
-Grocery List Application Files
+# WhatNow?
+WhatNow? Application Files
 
 DO NOT MERGE ANYTHING ON YOUR OWN
 Submit a pull request and let someone else review it.
