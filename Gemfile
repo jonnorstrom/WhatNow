@@ -7,7 +7,6 @@ gem 'activerecord'
 gem 'activesupport'
 gem 'json'
 gem 'bcrypt'
-
 # PostgreSQL driver
 gem 'pg'
 
