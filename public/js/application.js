@@ -1,10 +1,12 @@
 $(document).ready(function(){
   $('#login').on('click', function(){
     $('.login').removeClass('hidden');
+    $('.rogister').addClass('hidden');
   });
 
   $('#register').on('click', function(){
     $('.register').removeClass('hidden');
+    $('.login').addClass('hidden');
   });
 
   // signing in/up handler
@@ -16,5 +18,9 @@ $(document).ready(function(){
       method: $form.attr('method'),
       data: $form.serialize()
     });
+  });
+
+  $('.mood-table').on('click', 'img', function(){
+    var mood = $(this).attr('id');
   });
 });
