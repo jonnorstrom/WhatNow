@@ -131,3 +131,11 @@ task "console" do
 end
 
 task :default  => :spec
+
+# require 'csv'
+# desc "Imports a CSV file into an ActiveRecord table"
+# task :import, [:filename] => :environment do
+#     CSV.foreach('zipcode.csv', :headers => true) do |row|
+#       MyModel.create!(row.to_hash)
+#     end
+# end

@@ -3,7 +3,7 @@ get '/login' do
     if user
       if user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect "/users/#{user.id}"
+        redirect "/recommendations"
       else
         @error = "Whoops! Remember to fill out both the username and password fields, usernames must be unique!"
         erb :login

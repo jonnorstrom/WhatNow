@@ -1,0 +1,31 @@
+.options .search_icons {
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+}
+
+.options .search_icons img {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.search_icons img:hover {
+  width: 220px;
+  height: 220px;
+  padding: 0px;
+}
+
+.options {
+  /*width: 70%;*/
+  margin:auto;
+}
+
+.search_page h1{
+  text-align: center;
+  margin: auto;
+}
+
+.search_page .icon_text{
+  text-align: center;
+}
