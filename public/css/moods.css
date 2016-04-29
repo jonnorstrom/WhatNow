@@ -38,6 +38,10 @@ h2 {
   margin-left: 20%;
 }
 
+.sub-container {
+  padding-top: 7%;
+}
+
 #poster {
   float: left;
   padding-right: 15px;
@@ -58,12 +62,12 @@ h2 {
 
 #og-mood {
   position: absolute;
-  top: 20%;
+  top: 27%;
 }
 
 #die-pic {
   position: absolute;
-  top: 35%;
+  top: 42%;
 }
 
 #die-pic:hover {
@@ -71,6 +75,8 @@ h2 {
 }
 
 #back-arrow {
+  height: 70px;
+  width: 70px;
   left: 20%;
   position: absolute;
 }
