@@ -1,1 +1,23 @@
-<h1 id="comingsoon">Text Search Coming Soon...</h1>
+<h1 id="comingsoon">Find by Genre</h1>
+
+<form action="/getflix" class="textsearch" method="get">
+  <input type="hidden" name="search" value="search">
+  <select name="genre">
+    <option value="" disabled selected>Select the genre</option>
+    <option value="Comedies">Comedies</option>
+    <option value="Children & Family">Children & Family</option>
+    <option value="Classic Movies">Classic Movies</option>
+    <option value="Oscar-winning Movies">Oscar-winning</option>
+    <option value="Dramas">Dramas</option>
+    <option value="Independent Movies">Independent</option>
+    <option value="Thrillers">Thrillers</option>
+    <option value="Action & Adventure">Action & Adventure</option>
+    <option value="Gay & Lesbian Movies">LGBTQ</option>
+    <option value="Documentaries">Documentaries</option>
+    <option value="Romantic Movies">Romantic</option>
+    <option value="Sci-Fi & Fantasy">Sci-Fi & Fantasy</option>
+    <option value="TV Shows">TV Shows</option>
+    <option value="Foreign Movies">Foreign</option>
+  </select><br>
+  <input type="submit" value="Search it">
+</form>

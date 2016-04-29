@@ -45,6 +45,9 @@ get '/moods' do
 end
 
 get "/getflix" do
+  if params[:search] = "search"
+    redirect "/movies/#{params[:genre]}"
+  end
   if session[:mood]
     movie = Movie.all.where(category: session[:mood].sample).sample
     img_src = params[:imgSrc]

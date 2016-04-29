@@ -95,6 +95,28 @@ footer{
 }
 
 #comingsoon{
-  padding-top: 10%;
+  padding-top: 4%;
   text-align: center;
+}
+
+
+.textsearch {
+  text-align: center;
+  margin:auto;
+}
+
+.textsearch select{
+  width: 220px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.3em;
+  border: 1px solid lightgray;
+}
+
+.textsearch input[type=submit]{
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  background-color: white;
+  width: 220px;
+  height: 40px;
 }
