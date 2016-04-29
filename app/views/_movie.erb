@@ -1,1 +1,10 @@
-<p><%=movie_data["show_cast"]%></p>
+<div class="response-show">
+  <img id="poster" src="<%=movie_data["poster"]%>">
+  <p class="response-info" id="movie-title"><%=movie_data["show_title"]%></p>
+  <p class="response-info"><%=movie_data["rating"]%></p>
+  <p class="response-info"><%=movie_data["release_year"]%></p>
+  <p class="response-info"><%=movie_data["director"]%></p>
+  <p class="response-info"><%=movie_data["category"]%></p>
+  <p class="response-info" id="movie-cast"><%=movie_data["show_cast"]%></p>
+  <p class="response-info"><%=movie_data["summary"]%></p>
+</div>
