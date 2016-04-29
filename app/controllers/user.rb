@@ -1,9 +1,11 @@
 post '/users' do
     user = User.new(username: params[:username], password: params[:password], zip: params[:zip])
     if user.save
+      p "I saved your user"
       session[:user_id] = user.id
       redirect "/"
     else
+      p "I didn't save your user"
       session[:error] = "Whoops! Remember to fill out the username, password and Zipcode fields, usernames must be unique!"
       redirect "/"
     end
