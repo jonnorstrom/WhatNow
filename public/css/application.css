@@ -8,7 +8,6 @@ body{
   margin:0;
   top:0;
   height:100%;
-
 }
 
 .main-container {
@@ -21,6 +20,24 @@ body{
   width: 100%;
   background: #4D5257;
   margin-bottom: 20px;
+  display: inline-block;
+}
+
+.header a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav{
+  float: right;
+  padding-right: 4%;
+  position: relative;
+  margin-top: -10%;
+}
+nav a{
+  color: white;
+  text-decoration: none;
+  padding: 2px;
 }
 p#title {
   padding-top: 20px;
@@ -32,8 +49,8 @@ p#title {
 
 p#subtitle{
   position: relative;
-  margin-top: -7px;
-  font-size: 1.4em;
+  margin-top: 5px;
+  font-size: 1.2em;
   color: #FFFFF7;
 }
 
@@ -46,10 +63,11 @@ footer a{
 }
 
 footer{
+  clear:both;
   text-align: center;
   bottom: 0;
   width: 100%;
-  position: relative;;
+  position: fixed;
 }
 
 .main-container{

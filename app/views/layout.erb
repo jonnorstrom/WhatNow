@@ -4,6 +4,8 @@
   <link rel="stylesheet" href="/css/application.css">
   <link rel="stylesheet" href="/css/searchpage.css">
   <link rel="stylesheet" href="/css/moods.css">
+  <link rel="stylesheet" href="/css/login.css">
+
   <link rel="icon" type="image/png" href="/imgs/favicon.png" />
   <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -15,9 +17,17 @@
 </head>
 <body>
   <div class="header">
-    <p id="title">WhatNow?</p>
-    <p id="subtitle">We'll choose for you</p>
+    <a href="/">
+      <p id="title">WhatNow?</p>
+      <p id="subtitle">We'll choose for you</p>
+    </a>
   </div>
+  <nav>
+    <%if session[:user_id]%>
+    <a href="/user/<%=session[:user_id]%>"><%=User.find(session[:user_id]).username%><a>
+    <a href="/logout">logout</a>
+    <%end%>
+  </nav>
   <div class="main-container">
     <%= yield %>
   </div>
