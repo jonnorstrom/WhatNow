@@ -72,7 +72,21 @@ $(document).ready(function(){
     });
   });
 
-
+  $('.main-container').on('click','#weather', function(){
+    event.preventDefault();
+    var mood = $(this).find('img').attr('name');
+    var img = $(this).find('img').attr('src');
+    var data = {genre: moods[mood].sample(), mood: img};
+    console.log(data);
+    var request = $.ajax({
+      url: '/getflix',
+      data: data
+    });
+    request.done(function(responseHtml){
+      $('.search_page').addClass('hidden');
+      $('.main-container').append(responseHtml);
+    });
+  });
 
 
 });

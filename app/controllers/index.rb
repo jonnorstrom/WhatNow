@@ -1,16 +1,16 @@
 weather_icons = {
-  "clear-day" => '/imgs/weather/sunny.png',
-  "clear-night" => '/imgs/weather/clear-night.png',
-  "rain" => '/imgs/weather/rain.png',
-  "snow" => '/imgs/weather/snowman2.png',
-  "sleet" => '/imgs/weather/snow.png',
-  "wind" => '/imgs/weather/windy.png',
-  "fog" => '/imgs/weather/fog.png',
-  "cloudy" => '/imgs/weather/cloudy.png',
-  'partly-cloudy-day' => '/imgs/weather/partly_cloudy.png',
-  'partly-cloudy-night' => '/imgs/weather/cloud.png',
-  'default' => '/imgs/weather/partly_cloudy.png'
-};
+  "clear-day" => ['/imgs/weather/sunny.png', 'happy'],
+  "clear-night" => ['/imgs/weather/clear-night.png', 'beers'],
+  "rain" => ['/imgs/weather/rain.png', 'sad'],
+  "snow" => ['/imgs/weather/snowman2.png', 'inlove'],
+  "sleet" => ['/imgs/weather/snow.png', 'shitty'],
+  "wind" => ['/imgs/weather/windy.png', 'scary'],
+  "fog" => ['/imgs/weather/fog.png', 'spooky'],
+  "cloudy" => ['/imgs/weather/cloudy.png', 'thinker'],
+  'partly-cloudy-day' => ['/imgs/weather/partly_cloudy.png', 'laughing'],
+  'partly-cloudy-night' => ['/imgs/weather/cloud.png', 'wine'],
+  'default' => ['/imgs/weather/partly_cloudy.png', 'happy']
+}
 
 
 
@@ -22,7 +22,8 @@ get '/' do
     uri = URI(string)
     response = Net::HTTP.get_response(uri)
     weather = JSON.parse(response.body)
-    @src = weather_icons[weather["currently"]["icon"]]
+    @src = weather_icons[weather["currently"]["icon"]][0]
+    @mood = weather_icons[weather["currently"]["icon"]][1]
     erb :"search_options"
   else
     if session[:errors]
