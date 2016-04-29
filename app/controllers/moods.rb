@@ -38,34 +38,22 @@
 # end
 
 get '/moods' do
-  if session[:redirect]
-    session.delete(:redirect)
-  end
   if session[:mood]
     session.delete(:mood)
   end
-  session[:redirect] = true
   erb :moods
 end
 
 get "/getflix" do
   if session[:mood]
-    movie = Movie.all.where(category: session[:mood]).sample
-    img_src = params[:mood]
+    movie = Movie.all.where(category: session[:mood].sample).sample
+    img_src = params[:imgSrc]
   else
-    movie = Movie.all.where(category: params[:genre]).sample
-    img_src = params[:mood]
+    movie = Movie.all.where(category: params[:genre].sample).sample
+    img_src = params[:imgSrc]
     session[:mood] = params[:genre]
   end
   if request.xhr?
     erb :"_movie", :locals => {movie_data: movie, src: img_src}, layout: false
-  end
-end
-
-get '/back' do
-  if session[:redirect]
-    redirect "/moods"
-  else
-    redirect "/"
   end
 end
