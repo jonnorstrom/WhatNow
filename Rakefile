@@ -139,9 +139,11 @@ namespace :csv do
   desc "Import CSV Data from Movie Collection data"
   task :import do
     Movie.delete_all
-    csv_file_path = 'ALL_MOVIES.csv'
+    Zipcode.delete_all
+    csv_file_path_zipcode = 'zipcode.csv'
+    csv_file_path_movies = 'ALL_MOVIES.csv'
 
-    CSV.foreach(csv_file_path) do |row|
+    CSV.foreach(csv_file_path_movies) do |row|
         Movie.create!({
           :title => row[1],
           :year => row[2],
@@ -152,7 +154,15 @@ namespace :csv do
           :summary => row[7],
           :poster => row[8]
         })
-        puts "Row added!"
+        puts "Movie Row added!"
+    end
+    CSV.foreach(csv_file_path_zipcode) do |row|
+        Zipcode.create!({
+          :zip => row[0],
+          :lat => row[1],
+          :lng => row[2],
+        })
+        puts "Zip Row added!"
     end
   end
 end
