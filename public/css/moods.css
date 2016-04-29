@@ -33,6 +33,7 @@ h2 {
 }
 
 .response-show {
+  display: inline-block;
   width: 600px;
   margin-left: 20%;
 }
@@ -44,4 +45,10 @@ h2 {
 
 #movie-title {
   font-size: 30px;
+}
+
+#og-mood {
+  position: absolute;
+  height: 115px;
+  width: 115px;
 }

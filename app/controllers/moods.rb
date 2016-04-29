@@ -1,11 +1,11 @@
-get '/really/dont/go/here/again' do
-  require 'csv'
-  CSV.open("./ALL_MOVIES.csv", "wb") do |csv|
-    csv << Movie.attribute_names
-    Movie.all.each do |movie|
-      csv << movie.attributes.values
-    end
-  end
+# get '/really/dont/go/here/again' do
+  # require 'csv'
+  # CSV.open("./ALL_MOVIES.csv", "wb") do |csv|
+  #   csv << Movie.attribute_names
+  #   Movie.all.each do |movie|
+  #     csv << movie.attributes.values
+  #   end
+  # end
   # movies = Movie.all
   # more_movies = movies.shuffle
   #
@@ -21,21 +21,21 @@ get '/really/dont/go/here/again' do
   #       if movie_data[0] == "errorcode"
   #         nil
   #       else
-  #         Movie.find_or_create_by(
-  #               title: movie_data["show_title"],
-  #               year: movie_data["release_year"],
-  #               rating: movie_data["rating"],
-  #               category: movie_data["category"],
-  #               cast: movie_data["show_cast"],
-  #               director: movie_data["director"],
-  #               summary: movie_data["summary"],
-  #               poster: movie_data["poster"]
-  #             )
+          # Movie.find_or_create_by(
+          #       title: movie_data["show_title"],
+          #       year: movie_data["release_year"],
+          #       rating: movie_data["rating"],
+          #       category: movie_data["category"],
+          #       cast: movie_data["show_cast"],
+          #       director: movie_data["director"],
+          #       summary: movie_data["summary"],
+          #       poster: movie_data["poster"]
+          #     )
   #       end
   #     end
   #   end
   # end
-end
+# end
 
 get '/moods' do
   erb :moods
@@ -43,7 +43,8 @@ end
 
 get "/getflix" do
   movie = Movie.all.where(category: params[:genre]).sample
+  img_src = params[:mood]
   if request.xhr?
-    erb :"_movie", :locals => {movie_data: movie}, layout: false
+    erb :"_movie", :locals => {movie_data: movie, src: img_src}, layout: false
   end
 end

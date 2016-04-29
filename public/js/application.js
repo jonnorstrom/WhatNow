@@ -45,7 +45,8 @@ $(document).ready(function(){
 // event handler for emoji mood!
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
-    var data = {genre: moods[mood].sample()};
+    var data = {genre: moods[mood].sample(), mood: $(this).attr('src')};
+    console.log(data);
     var request = $.ajax({
       url: '/getflix',
       data: data
