@@ -46,7 +46,7 @@ $(document).ready(function(){
 // event handler for emoji mood!
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
-    var data = {genre: moods[mood].sample(), mood: $(this).attr('src')};
+    var data = {genre: moods[mood], imgSrc: $(this).attr('src')};
     console.log(data);
     var request = $.ajax({
       url: '/getflix',
@@ -54,21 +54,21 @@ $(document).ready(function(){
     });
 
     request.done(function(responseHtml){
-      $('.emojis').addClass('hidden');
-      $('.main-container').append(responseHtml);
+      $('.emojis').hide();
+      $('.sub-container').empty();
+      $('.sub-container').replaceWith(responseHtml);
     });
   }); // end of mood event handler
 
   $('.main-container').on('click', '#die-pic', function(){
     var request = $.ajax({
       url: '/getflix',
-      data: {mood: $('#og-mood').attr('src')}
+      data: {imgSrc: $('#og-mood').attr('src')}
     });
 
     request.done(function(responseHtml){
-      $('.emojis').addClass('hidden');
-      $('.main-container').empty();
-      $('.main-container').append(responseHtml);
+      $('.sub-container').empty();
+      $('.sub-container').replaceWith(responseHtml);
     });
   });
 
@@ -76,17 +76,22 @@ $(document).ready(function(){
     event.preventDefault();
     var mood = $(this).find('img').attr('name');
     var img = $(this).find('img').attr('src');
-    var data = {genre: moods[mood].sample(), mood: img};
+    var data = {genre: moods[mood].sample(), imgSrc: img};
     console.log(data);
     var request = $.ajax({
       url: '/getflix',
       data: data
     });
     request.done(function(responseHtml){
-      $('.search_page').addClass('hidden');
-      $('.main-container').append(responseHtml);
+      $('.search_page').hide();
+      $('.sub-container').empty();
+      $('.sub-container').replaceWith(responseHtml);
     });
   });
 
-
+  $('.main-container').on('click', '#back-arrow', function(){
+    $('.sub-container').hide();
+    $('.search_page').show();
+    $('.emojis').show();
+  });
 });
