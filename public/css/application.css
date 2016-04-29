@@ -1,11 +1,58 @@
 html{
   font-family: Signika;
+  background: #FFFFF7;
+  color: #383C40;
 }
+
+body{
+  margin:0;
+  top:0;
+  height:100%;
+
+}
+
 .main-container {
   width: 80%;
   margin: auto;
 }
+.header{
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  background: #4D5257;
+  margin-bottom: 20px;
+}
+p#title {
+  padding-top: 20px;
+  margin:0;
+  font-size: 4em;
+  color: #FFFFF7;
+  font-family: Lobster;
+}
+
+p#subtitle{
+  position: relative;
+  margin-top: -7px;
+  font-size: 1.4em;
+  color: #FFFFF7;
+}
 
 .hidden {
   display: none;
+}
+
+footer a{
+  color: #8EDB7C;
+}
+
+footer{
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  position: relative;;
+}
+
+.main-container{
+  margin:auto;
+  width: 70%;
 }
