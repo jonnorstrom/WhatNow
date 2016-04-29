@@ -132,6 +132,32 @@ end
 
 task :default  => :spec
 
+require 'csv'
+
+namespace :csv do
+
+  desc "Import CSV Data from Movie Collection data"
+  task :import do
+    Movie.delete_all
+    csv_file_path = 'ALL_MOVIES.csv'
+
+    CSV.foreach(csv_file_path) do |row|
+        Movie.create!({
+          :title => row[1],
+          :year => row[2],
+          :rating => row[3],
+          :category => row[4],
+          :cast => row[5],
+          :director => row[6],
+          :summary => row[7],
+          :poster => row[8]
+        })
+        puts "Row added!"
+    end
+  end
+end
+
+
 # require 'csv'
 # desc "Imports a CSV file into an ActiveRecord table"
 # task :import, [:filename] => :environment do
