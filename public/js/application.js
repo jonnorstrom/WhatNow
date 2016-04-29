@@ -18,9 +18,14 @@ $(document).ready(function(){
       method: $form.attr('method'),
       data: $form.serialize()
     });
+    request.done(function(homeHTML){
+
+    });
   });
 
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
+
+    // send ajax to server with mood
   });
 });
