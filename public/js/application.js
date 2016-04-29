@@ -58,9 +58,16 @@ $(document).ready(function(){
     });
   }); // end of mood event handler
 
-  // $('.main-container #die-pic').mouseover(function(){
-  //   $(this).addClass('flipped');
-  //     }).mouseleave(function(){
-  //     $(this).removeClass('flipped');
-  //   });
+  $('.main-container').on('click', '#die-pic', function(){
+    var request = $.ajax({
+      url: '/getflix',
+      data: {mood: $('#og-mood').attr('src')}
+    });
+
+    request.done(function(responseHtml){
+      $('.emojis').addClass('hidden');
+      $('.main-container').empty();
+      $('.main-container').append(responseHtml);
+    });
+  });
 });
