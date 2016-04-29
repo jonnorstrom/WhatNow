@@ -7,7 +7,7 @@ weather_icons = {
   "wind" => ['/imgs/weather/windy.png', 'scary'],
   "fog" => ['/imgs/weather/fog.png', 'spooky'],
   "cloudy" => ['/imgs/weather/cloudy.png', 'thinker'],
-  'partly-cloudy-day' => ['/imgs/weather/partly_cloudy.png', 'laughing'],
+  'partly-cloudy-day' => ['/imgs/weather/partly_cloudy.png', 'happy'],
   'partly-cloudy-night' => ['/imgs/weather/cloud.png', 'wine'],
   'default' => ['/imgs/weather/partly_cloudy.png', 'happy']
 }
@@ -31,4 +31,8 @@ get '/' do
     end
     erb :login
   end
+end
+
+get '/search' do
+  erb :search
 end
