@@ -52,8 +52,8 @@ h2 {
 }
 
 .side-photo {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
 }
 
 #og-mood {
@@ -71,6 +71,6 @@ h2 {
 }
 
 #back-arrow {
+  left: 20%;
   position: absolute;
-  top: 47%;
 }
