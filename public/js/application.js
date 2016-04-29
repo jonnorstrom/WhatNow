@@ -8,14 +8,18 @@ Array.prototype.sample = function(){
 };
 
 $(document).ready(function(){
+  $('.login').toggle();
+  $('.register').toggle();
+
   $('#login').on('click', function(){
-    $('.login').removeClass('hidden');
-    $('.rogister').addClass('hidden');
+    $('#register').toggle();
+    $('.login').slideToggle("slow");
   });
 
   $('#register').on('click', function(){
-    $('.register').removeClass('hidden');
-    $('.login').addClass('hidden');
+    $("#login").toggle();
+    $('.register').slideToggle('slow');
+
   });
 
   // signing in/up handler
