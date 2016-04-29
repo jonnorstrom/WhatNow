@@ -26,7 +26,7 @@ get '/' do
     @mood = weather_icons[weather["currently"]["icon"]][1]
     erb :"search_options"
   else
-    if session[:errors]
+    if session[:error]
       @error = session[:error]
     end
     erb :login
