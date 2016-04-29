@@ -12,6 +12,7 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
+require 'net/http'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
