@@ -38,12 +38,21 @@
 # end
 
 get '/moods' do
+  if session[:mood]
+    session.delete(:mood)
+  end
   erb :moods
 end
 
 get "/getflix" do
-  movie = Movie.all.where(category: params[:genre]).sample
-  img_src = params[:mood]
+  if session[:mood]
+    movie = Movie.all.where(category: session[:mood]).sample
+    img_src = params[:mood]
+  else
+    movie = Movie.all.where(category: params[:genre]).sample
+    img_src = params[:mood]
+    session[:mood] = params[:genre]
+  end
   if request.xhr?
     erb :"_movie", :locals => {movie_data: movie, src: img_src}, layout: false
   end
