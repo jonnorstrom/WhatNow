@@ -88,5 +88,9 @@ $(document).ready(function(){
     });
   });
 
-
+  $('.main-container').on('click', '#back-arrow', function(){
+    $('.sub-container').addClass('hidden');
+    $('.search_page').removeClass('hidden');
+    $('.emojis').removeClass('hidden');
+  });
 });
