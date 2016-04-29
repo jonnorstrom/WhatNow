@@ -7,9 +7,6 @@ Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
 };
 
-// console.log(moods.happy.sample());
-
-
 $(document).ready(function(){
   $('#login').on('click', function(){
     $('.login').removeClass('hidden');
@@ -30,24 +27,20 @@ $(document).ready(function(){
       method: $form.attr('method'),
       data: $form.serialize()
     });
-    request.done(function(homeHTML){
-
-    });
   });
 
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
     var genre = moods[mood].sample();
     var data = {actor: genre};
-    console.log(data);
-
     var request = $.ajax({
       url: '/getflix',
       data: data
     });
 
-    request.done(function(response){
-      $('body').append(response);
+    request.done(function(responseHtml){
+      $('.emojis').addClass('hidden');
+      $('.main-container').append(responseHtml);
     });
   });
 });
