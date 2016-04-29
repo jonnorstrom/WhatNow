@@ -57,4 +57,10 @@ $(document).ready(function(){
       $('.main-container').append(responseHtml);
     });
   }); // end of mood event handler
+
+  // $('.main-container #die-pic').mouseover(function(){
+  //   $(this).addClass('flipped');
+  //     }).mouseleave(function(){
+  //     $(this).removeClass('flipped');
+  //   });
 });

@@ -47,8 +47,25 @@ h2 {
   font-size: 30px;
 }
 
+.sidephotos {
+  position: relative;
+}
+
+.side-photo {
+  height: 120px;
+  width: 120px;
+}
+
 #og-mood {
   position: absolute;
-  height: 115px;
-  width: 115px;
+  top: 20%;
+}
+
+#die-pic {
+  position: absolute;
+  top: 35%;
+}
+
+#die-pic:hover {
+    transform: scale(-1, 1);
 }
