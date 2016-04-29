@@ -1,6 +1,6 @@
 <div class="login_container">
-  <% if @error %>
-    <p><%=@error%></p>
+  <% if session[:error] %>
+    <p><%=session[:error]%></p>
   <% end %>
 
   <div class="register_form">
