@@ -12,7 +12,6 @@ gem 'pg'
 
 # Sinatra driver
 gem 'sinatra-contrib'
-
 # Use Thin for our web server
 gem 'thin'
 
