@@ -46,7 +46,6 @@ $(document).ready(function(){
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
     var data = {genre: moods[mood].sample()};
-    console.log(data)
     var request = $.ajax({
       url: '/getflix',
       data: data
