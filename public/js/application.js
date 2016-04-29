@@ -1,4 +1,5 @@
-var moods = { happy: ['Comedies', 'Children & Family Movies'],
+var moods = {
+  happy: ['Comedies', 'Children & Family Movies'],
   sad: ['Classic Movies', 'Oscar-winning Movies', 'Dramas'],
   shitty: ['Independent Movies','Thrillers'],
   laughing: ['Comedies', 'Cult Movies'],
@@ -70,4 +71,8 @@ $(document).ready(function(){
       $('.main-container').append(responseHtml);
     });
   });
+
+
+
+
 });
