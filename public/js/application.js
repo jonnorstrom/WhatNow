@@ -1,3 +1,15 @@
+var moods = { happy: ['Will Ferrell','Sandra Bullock','Adam Sandler'],
+  sad: ['Classic Movies', 'Romance','Dramas'],
+  shitty: ['Independent Movies','Thrillers','Faith & Spirtuality']
+};
+
+Array.prototype.sample = function(){
+  return this[Math.floor(Math.random()*this.length)];
+};
+
+// console.log(moods.happy.sample());
+
+
 $(document).ready(function(){
   $('#login').on('click', function(){
     $('.login').removeClass('hidden');
@@ -25,7 +37,17 @@ $(document).ready(function(){
 
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
+    var genre = moods[mood].sample();
+    var data = {actor: genre};
+    console.log(data);
 
-    // send ajax to server with mood
+    var request = $.ajax({
+      url: '/getflix',
+      data: data
+    });
+
+    request.done(function(response){
+      $('body').append(response);
+    });
   });
 });
