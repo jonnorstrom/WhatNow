@@ -12,7 +12,8 @@ get "/getflix" do
   uri = URI(string)
   response = Net::HTTP.get_response(uri)
   stuff = JSON.parse(response.body)[0]
+  p stuff
   if request.xhr?
-    erb :"_movie", :locals => {movie_data: stuff}
+    erb :"_movie", :locals => {movie_data: stuff}, layout: false
   end
 end

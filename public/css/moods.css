@@ -23,3 +23,16 @@
 h2 {
   font-family: Signika;
 }
+
+.response-show {
+  width: 600px;
+}
+
+#poster {
+  float: left;
+  padding-right: 15px;
+}
+
+#movie-title {
+  font-size: 30px;
+}
