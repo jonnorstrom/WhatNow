@@ -69,3 +69,8 @@ h2 {
 #die-pic:hover {
     transform: scale(-1, 1);
 }
+
+#back-arrow {
+  position: absolute;
+  top: 47%;
+}
