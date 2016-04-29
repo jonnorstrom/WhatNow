@@ -70,3 +70,26 @@ footer{
   width: 100%;
   position: fixed;
 }
+
+.zip_update{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.zipcode input{
+  font-size: 2em;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+}
+
+.zipcode input[type=submit]{
+  height: 40px;
+  width: 155px;
+  background: #4D5257;
+  font-size: 1em;
+  color: white;
+  margin-top: 10px;
+  border: none;
+}
