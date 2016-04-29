@@ -11,9 +11,10 @@ body{
 }
 
 .main-container {
-  width: 80%;
+  width: 70%;
   margin: auto;
 }
+
 .header{
   text-align: center;
   height: 150px;
@@ -68,9 +69,4 @@ footer{
   bottom: 0;
   width: 100%;
   position: fixed;
-}
-
-.main-container{
-  margin:auto;
-  width: 70%;
 }
