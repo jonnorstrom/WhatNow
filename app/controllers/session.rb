@@ -5,11 +5,11 @@ post '/login' do
         session[:user_id] = user.id
         redirect "/"
       else
-        session[:error] = "Whoops! Remember to fill out both the username and password fields, usernames must be unique!"
+        session[:error] = "Whoops! Remember to fill out the username, password and Zipcode fields, usernames must be unique!"
         redirect '/'
       end
     else
-      session[:error] = "Whoops! Remember to fill out both the username and password fields, usernames must be unique!"
+      session[:error] = "Whoops! Remember to fill out the username, password and Zipcode fields, usernames must be unique!"
       redirect '/'
     end
 end
