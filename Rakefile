@@ -156,14 +156,6 @@ namespace :csv do
         })
         puts "Movie Row added!"
     end
-    CSV.foreach(csv_file_path_zipcode) do |row|
-        Zipcode.create!({
-          :zip => row[0],
-          :lat => row[1],
-          :lng => row[2],
-        })
-        puts "Zip Row added!"
-    end
   end
 end
 
