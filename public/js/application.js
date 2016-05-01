@@ -32,17 +32,6 @@ $(document).ready(function(){
 
   });
 
-  // signing in/up handler
-  $('.register, .login').on('submit', function(e){
-
-    var $form = $(this);
-    var request = $.ajax({
-      url: $form.attr('action'),
-      method: $form.attr('method'),
-      data: $form.serialize()
-    });
-  });
-
 // event handler for emoji mood!
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');

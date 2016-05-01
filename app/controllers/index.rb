@@ -12,8 +12,6 @@ weather_icons = {
   'default' => ['/imgs/weather/partly_cloudy.png', 'happy']
 }
 
-
-
 get '/' do
   if session[:user_id]
     user = User.find(session[:user_id])
@@ -26,10 +24,7 @@ get '/' do
     @mood = weather_icons[weather["currently"]["icon"]][1]
     erb :"search_options"
   else
-    if session[:error]
-      @error = session[:error]
-    end
-    erb :login
+    redirect '/login'
   end
 end
 
