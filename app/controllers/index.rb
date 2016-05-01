@@ -15,8 +15,8 @@ weather_icons = {
 get '/' do
   if session[:user_id]
     user = User.find(session[:user_id])
-    @zip = Zipcode.find_by(zip: user.zip)
-    string = "https://api.forecast.io/forecast/e2264a1cad8bbd1362d30c9bab93153d/#{@zip.lat},#{@zip.lng}"
+    @zip = user.find_coords
+    string = "https://api.forecast.io/forecast/e2264a1cad8bbd1362d30c9bab93153d/#{@zip[:lat]},#{@zip[:lng]}"
     uri = URI(string)
     response = Net::HTTP.get_response(uri)
     weather = JSON.parse(response.body)
