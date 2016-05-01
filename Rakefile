@@ -158,12 +158,3 @@ namespace :csv do
     end
   end
 end
-
-
-# require 'csv'
-# desc "Imports a CSV file into an ActiveRecord table"
-# task :import, [:filename] => :environment do
-#     CSV.foreach('zipcode.csv', :headers => true) do |row|
-#       MyModel.create!(row.to_hash)
-#     end
-# end
