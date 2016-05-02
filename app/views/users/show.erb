@@ -1,6 +1,6 @@
 <div class="zip_update">
   <h1 id='zip_title'>Change your zipcode</h1>
-  <form class="zipcode" action="/users" method="post">
+  <form class="zipcode" action="/users/<%=@user.id%>" method="post">
     <input type='hidden' name='_method' value="PUT">
     <input type="text" name="zip" placeholder="<%=@user.zip%>"><br>
     <input class="login-submit" type='submit' value="Change it!"/>

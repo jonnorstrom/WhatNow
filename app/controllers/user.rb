@@ -19,9 +19,11 @@ get '/users/:id' do
     erb :"users/show"
 end
 
-put '/users' do
-  user = User.find_by(session[:id])
+put '/users/:id' do
+  p params
+  user = User.find(params[:id])
+  p user.zip
   user.update(zip: params[:zip])
-  p user
+  p user.zip
   redirect "/users/#{user.id}"
 end
