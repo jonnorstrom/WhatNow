@@ -50,6 +50,7 @@ $(document).ready(function(){
   }); // end of mood event handler
 
   $('.main-container').on('click', '#die-pic', function(){
+    var className = $('#back-arrow').parent().attr('class');
     var request = $.ajax({
       url: '/getflix',
       data: {imgSrc: $('#og-mood').attr('src')}
@@ -58,6 +59,7 @@ $(document).ready(function(){
     request.done(function(responseHtml){
       $('.sub-container').empty();
       $('.sub-container').replaceWith(responseHtml);
+      $('#back-arrow').parent().addClass(className);
     });
   });
 
