@@ -36,7 +36,6 @@ $(document).ready(function(){
   $('.mood-table').on('click', 'img', function(){
     var mood = $(this).attr('id');
     var data = {genre: moods[mood], imgSrc: $(this).attr('src')};
-    console.log(data);
     var request = $.ajax({
       url: '/getflix',
       data: data
@@ -46,6 +45,7 @@ $(document).ready(function(){
       $('.emojis').hide();
       $('.sub-container').empty();
       $('.sub-container').replaceWith(responseHtml);
+      $('#back-arrow').parent().addClass('emoji');
     });
   }); // end of mood event handler
 
@@ -65,8 +65,7 @@ $(document).ready(function(){
     event.preventDefault();
     var mood = $(this).find('img').attr('name');
     var img = $(this).find('img').attr('src');
-    var data = {genre: moods[mood].sample(), imgSrc: img};
-    console.log(data);
+    var data = {genre: moods[mood], imgSrc: img};
     var request = $.ajax({
       url: '/getflix',
       data: data
@@ -75,12 +74,22 @@ $(document).ready(function(){
       $('.search_page').hide();
       $('.sub-container').empty();
       $('.sub-container').replaceWith(responseHtml);
+      $('#back-arrow').parent().addClass('weather');
     });
   });
 
   $('.main-container').on('click', '#back-arrow', function(){
-    $('.sub-container').hide();
-    $('.search_page').show();
-    $('.emojis').show();
+    if ($(this).parent().hasClass('weather')) {
+      $('.sub-container').hide();
+      $('.search_page').show();
+    } else if ($(this).parent().hasClass('emoji')) {
+      var request = $.ajax({
+        url: '/moods'
+      });
+      request.done(function(responseHtml){
+        $('.sub-container').empty();
+        $('.emojis').show();
+      });
+    }
   });
 });

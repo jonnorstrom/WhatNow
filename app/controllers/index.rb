@@ -8,11 +8,14 @@ weather_icons = {
   "fog" => ['/imgs/weather/fog.png', 'spooky'],
   "cloudy" => ['/imgs/weather/cloudy.png', 'thinker'],
   'partly-cloudy-day' => ['/imgs/weather/partly_cloudy.png', 'happy'],
-  'partly-cloudy-night' => ['/imgs/weather/cloud.png', 'wine'],
+  'partly-cloudy-night' => ['/imgs/weather/cloud.png', 'thinker'],
   'default' => ['/imgs/weather/partly_cloudy.png', 'happy']
 }
 
 get '/' do
+  if session[:mood]
+    session.delete(:mood)
+  end
   if session[:user_id]
     user = User.find(session[:user_id])
     @zip = user.find_coords
