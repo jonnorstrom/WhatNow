@@ -32,7 +32,7 @@
       end # movies.each end
     end # actors.each end
   end # more_movies.each end
- # def gather_movies end
+end# def gather_movies end
 
 # def write_csv
 #   CSV.open("./ALL_MOVIES.csv", "wb") do |csv|
