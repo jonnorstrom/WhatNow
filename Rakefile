@@ -139,7 +139,6 @@ namespace :csv do
   desc "Import CSV Data from Movie Collection data"
   task :import do
     Movie.delete_all
-    Zipcode.delete_all
     csv_file_path_zipcode = 'zipcode.csv'
     csv_file_path_movies = 'ALL_MOVIES.csv'
 

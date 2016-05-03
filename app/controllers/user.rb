@@ -20,10 +20,7 @@ get '/users/:id' do
 end
 
 put '/users/:id' do
-  p params
   user = User.find(params[:id])
-  p user.zip
   user.update(zip: params[:zip])
-  p user.zip
-  redirect "/users/#{user.id}"
+  redirect "/"
 end

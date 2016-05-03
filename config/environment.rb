@@ -20,6 +20,7 @@ require 'erb'
 require 'json'
 require 'bcrypt'
 require 'csv'
+require 'timeout'
 
 
 # Some helper constants for path-centric logic
