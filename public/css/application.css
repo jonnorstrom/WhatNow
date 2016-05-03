@@ -1,5 +1,6 @@
 html{
   font-family: Signika;
+  min-width: 1200px;
   background: #FFFFF7;
   color: #383C40;
 }
@@ -11,17 +12,18 @@ body{
 }
 
 .main-container {
-  width: 70%;
   margin: auto;
 }
 
 .header{
+  position: relative;
   text-align: center;
-  height: 150px;
+  height: 130px;
   width: 100%;
   background: #4D5257;
   margin-bottom: 20px;
   display: inline-block;
+  padding-bottom: 30px;
 }
 
 .header a{
@@ -29,19 +31,20 @@ body{
   display: inline-block;
 }
 
-nav{
-  float: right;
-  padding-right: 4%;
-  position: relative;
-  margin-top: -10%;
+nav {
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  right: 10%;
 }
-nav a{
+
+nav a {
   color: white;
   text-decoration: none;
   padding: 2px;
 }
 p#title {
-  padding-top: 20px;
+  padding-top: 15px;
   margin:0;
   font-size: 4em;
   color: #FFFFF7;

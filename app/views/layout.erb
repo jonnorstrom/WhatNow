@@ -21,13 +21,13 @@
       <p id="title">WhatNow?</p>
       <p id="subtitle">We'll choose for you</p>
     </a>
+    <nav>
+      <%if session[:user_id]%>
+      <a href="/users/<%=session[:user_id]%>"><%=User.find(session[:user_id]).username%><a>
+        <a href="/logout">logout</a>
+      <%end%>
+    </nav>
   </div>
-  <nav>
-    <%if session[:user_id]%>
-    <a href="/users/<%=session[:user_id]%>"><%=User.find(session[:user_id]).username%><a>
-    <a href="/logout">logout</a>
-    <%end%>
-  </nav>
   <div class="main-container">
     <%= yield %>
   </div>

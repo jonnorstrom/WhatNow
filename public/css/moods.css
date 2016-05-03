@@ -20,31 +20,30 @@
   padding: 20px;
 }
 
-/*#title {
-  font-family: Lobster;
-}*/
-
-h2 {
+.emojis .direct-title {
+  text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin: auto;
   width: 80%;
+  margin: auto;
   font-family: Signika;
+}
+
+.sub-container {
+  position: relative;
+  width: 1000px;
+  margin: auto;
 }
 
 .response-show {
   display: inline-block;
-  width: 600px;
-  margin-left: 20%;
-}
-
-.sub-container {
-  padding-top: 7%;
+  width: 650px;
+  margin-left: 18%;
 }
 
 #poster {
   float: left;
-  padding-right: 15px;
+  margin-right: 15px;
 }
 
 #movie-title {
@@ -62,12 +61,12 @@ h2 {
 
 #og-mood {
   position: absolute;
-  top: 27%;
+  top: 5px;
 }
 
 #die-pic {
   position: absolute;
-  top: 42%;
+  top: 110px;
 }
 
 #die-pic:hover {
@@ -77,6 +76,7 @@ h2 {
 #back-arrow {
   height: 70px;
   width: 70px;
-  left: 20%;
+  top: 5px;
+  left: 100px;
   position: absolute;
 }
