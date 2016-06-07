@@ -1,9 +1,9 @@
 # WhatNow?
-WhatNow? Application Files
+Live site can be found at [heywhatnow.herokuapp.com](http://heywhatnow.herokuapp.com/)
 
 ## What is this app for?
-1. This app is intended to give you a random movie suggestion.
-2. Suggestions are based on your current mood, your basic search parameters, and the weather forcast for your current zip-code
+1. This app is intended to give you a tailered movie suggestion.
+2. Suggestions are based on your current mood, your basic search parameters, and the weather forcast for your current zipcode
 
 ## Application Norms:
 1. DO NOT MERGE ANYTHING ON YOUR OWN
